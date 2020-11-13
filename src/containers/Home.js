@@ -1,26 +1,30 @@
 import React from "react";
-import Header from "../composant/Header";
+import { Link } from "react-router-dom";
 const Home = (props) => {
   console.log(props);
   return (
     <div>
-      <Header></Header>
       {props.offers.map((offer, i) => {
+        // console.log(offer);
         return (
-          <div>
-            <h1 className="name">{offer.owner.account.username}</h1>
-            <img style={{ height: 80 }} src={offer.owner.account.avatar.url} />
-            <img style={{ height: 180 }} src={offer.product_image.url} />
-            <h3>{offer.product_price}€</h3>
+          <div key={i}>
+            <spa className="name">{offer.owner.account.username}</spa>
 
-            {offer.product_details.map((detail, i) => {
-              return (
-                <div>
-                  <p className="taille">{detail.TAILLE}</p>
-                  <p className="detail">{detail.MARQUE}</p>
-                </div>
-              );
-            })}
+            <img style={{ height: 80 }} src={offer.owner.account.avatar.url} />
+            <div className="article">
+              <Link to={`/offer/${offer._id}`} key={offer._id}>
+                <img style={{ height: 180 }} src={offer.product_image.url} />
+                <h3 className="prix">{offer.product_price}€</h3>
+              </Link>
+              {offer.product_details.map((detail, i) => {
+                return (
+                  <div key={i}>
+                    <p className="taille">{detail.TAILLE}</p>
+                    <p className="marque">{detail.MARQUE}</p>
+                  </div>
+                );
+              })}
+            </div>
           </div>
         );
       })}

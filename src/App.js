@@ -1,7 +1,10 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Home from "./containers/Home";
+import Header from "./composant/Header";
+import "./App.css";
+import Offer from "./containers/Offer";
 
 export default function App() {
   const [data, setData] = useState({});
@@ -20,27 +23,13 @@ export default function App() {
     <span>En cours de chargement... </span>
   ) : (
     <Router>
+      <Header></Header>
       <div>
-        <nav>
-          <ul>
-            <li>
-              <Link to="/http://localhost:3000">Home</Link>
-            </li>
-            <li>
-              <Link to="/http://localhost:3000/offer/:id">Offer</Link>
-            </li>
-          </ul>
-        </nav>
-        {/* A <Switch> looks through its children <Route>s and
-            renders the first one that matches the current URL. */}
         <Switch>
-          <Route path="/http://localhost:3000/offer/:id">
-            {/* <Offer /> */}
-            <a>
-              <Link to="/">Home</Link>
-            </a>
+          <Route path="/offer/:id">
+            <Offer offers={data.offers} />
           </Route>
-          <Route path="/http://localhost:3000">
+          <Route path="/">
             <Home offers={data.offers} />
           </Route>
         </Switch>
