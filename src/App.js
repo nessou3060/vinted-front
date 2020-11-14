@@ -1,10 +1,13 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import Cookies from "js-cookie";
 import Home from "./containers/Home";
 import Header from "./composant/Header";
 import "./App.css";
 import Offer from "./containers/Offer";
+import Signup from "./containers/Signup";
+import Login from "./containers/login";
 
 export default function App() {
   const [data, setData] = useState({});
@@ -29,6 +32,13 @@ export default function App() {
           <Route path="/offer/:id">
             <Offer offers={data.offers} />
           </Route>
+          <Route path="/signup">
+            <Signup></Signup>
+          </Route>
+          <Route path="/login">
+            <Login></Login>
+          </Route>
+
           <Route path="/">
             <Home offers={data.offers} />
           </Route>

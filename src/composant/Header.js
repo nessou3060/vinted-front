@@ -1,14 +1,21 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 import Logo from "../assets/logo.png";
 const Header = (props) => {
   console.log(props);
   return (
     <div className="container">
-      <img className="logo " src={Logo} />
+      <Link to="/">
+        <img className="logo " src={Logo} />
+      </Link>
       <div className="button">
-        <button onClick={() => {}}>s'inscrire</button>
-        <button onClick={() => {}}>se connecter</button>
+        <Link to="/signup">
+          <button onClick={() => {}}>s'inscrire</button>
+        </Link>
+        <Link to="/login">
+          <button onClick={() => {}}>se connecter</button>
+        </Link>
         <button onClick={() => {}}>vend t'es article</button>
       </div>
     </div>

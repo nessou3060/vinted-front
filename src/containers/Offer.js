@@ -20,7 +20,7 @@ const Offer = () => {
     fetchData();
   }, [id]);
   return isLoading ? (
-    <p>En cours de chargement...</p>
+    <p>ca charge !!!!!</p>
   ) : (
     <div>
       <img style={{ height: 180 }} src={data.product_image.secure_url} />
