@@ -55,6 +55,7 @@ const Signup = () => {
           Conditions et Politique de Confidentialité de Vinted. Je confirme
           avoir au moins 18 ans.
         </p>
+
         <input type="submit" value="S'inscrire" />
       </form>
       <Link to="/login">Tu as déjà un compte ? Connecte-toi !</Link>
