@@ -1,9 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 
 import Logo from "../assets/logo.png";
 const Header = (props) => {
-  console.log(props);
+  const { token, setUser } = props;
+  const history = useHistory();
+  console.log(props.token);
   return (
     <div className="container">
       <Link to="/">
@@ -21,17 +24,31 @@ const Header = (props) => {
         placeholder="  Recherche des articles"
       ></input>
 
-      <div className="button">
-        <Link to="/signup">
-          <button className="buton1" onClick={() => {}}>
-            s'inscrire
+      <div className="glob">
+        {token ? (
+          <button
+            className="buton1"
+            onClick={() => {
+              setUser(null);
+              history.push("/");
+            }}
+          >
+            Se déconnecter
           </button>
-        </Link>
-        <Link to="/login">
-          <button className="buton1" onClick={() => {}}>
-            se connecter
-          </button>
-        </Link>
+        ) : (
+          <div className="button">
+            <Link to="/signup">
+              <button className="buton1" onClick={() => {}}>
+                s'inscrire
+              </button>
+            </Link>
+            <Link to="/login">
+              <button className="buton1" onClick={() => {}}>
+                se connecter
+              </button>
+            </Link>
+          </div>
+        )}
         <button className="buton2" onClick={() => {}}>
           vend t'es article
         </button>

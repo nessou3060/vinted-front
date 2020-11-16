@@ -3,7 +3,7 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 import { useHistory } from "react-router-dom";
 
-const Signup = (setUser) => {
+const Signup = ({ setUser }) => {
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -22,7 +22,7 @@ const Signup = (setUser) => {
           password: password,
         }
       );
-      //   console.log(response.data);
+      console.log("rrrr", response.data);
       if (response.data.token) {
         setUser(response.data.token);
         // Naviguer vers "/" Home
@@ -39,7 +39,7 @@ const Signup = (setUser) => {
     <div className="signup">
       <h1>S'inscrire</h1>
 
-      <form onSubmiit={handleSubmit}>
+      <form onSubmit={handleSubmit}>
         <input
           className="nom"
           type="text"

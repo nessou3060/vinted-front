@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import Cookies from "js-cookie";
+import Cookie from "js-cookie";
 import Home from "./containers/Home";
 import Header from "./composant/Header";
 import "./App.css";
@@ -16,6 +16,17 @@ import Payement from "./containers/Payement";
 export default function App() {
   const [data, setData] = useState({});
   const [isLoading, setIsLoading] = useState(true);
+  const [token, setToken] = useState(Cookie.get("userToken") || null);
+  const setUser = (tokenToSet) => {
+    if (tokenToSet) {
+      Cookie.set("userToken", tokenToSet);
+      setToken(tokenToSet);
+    } else {
+      Cookie.remove("userToken");
+      // Repasser le state token à null
+      setToken(null);
+    }
+  };
   const fetchData = async () => {
     const response = await axios.get(
       "https://lereacteur-vinted-api.herokuapp.com/offers"
@@ -30,7 +41,7 @@ export default function App() {
     <span>En cours de chargement... </span>
   ) : (
     <Router>
-      <Header></Header>
+      <Header token={token} setUser={setUser}></Header>
       <div>
         <Switch>
           <Route path="/offer/:id">
@@ -45,11 +56,11 @@ export default function App() {
           </Route>
 
           <Route path="/signup">
-            <Signup></Signup>
+            <Signup setUser={setUser}></Signup>
           </Route>
 
           <Route path="/login">
-            <Login></Login>
+            <Login setUser={setUser}></Login>
           </Route>
 
           <Route path="/">

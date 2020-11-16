@@ -33,7 +33,7 @@ const Login = (setUser) => {
   return (
     <div className="login">
       <h1>Se connecter </h1>
-      <form onSubmiit={handleSubmit}>
+      <form onSubmit={handleSubmit}>
         <input
           className="connecter1"
           type="text"
