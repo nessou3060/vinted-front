@@ -9,6 +9,9 @@ const Header = (props) => {
       <Link to="/">
         <img className="logo " src={Logo} />
       </Link>
+
+      <input type="text" placeholder="  Recherche des articles"></input>
+
       <div className="button">
         <Link to="/signup">
           <button className="buton1" onClick={() => {}}>

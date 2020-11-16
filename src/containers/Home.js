@@ -25,11 +25,7 @@ const Home = (props) => {
                 />
                 <div className="article">
                   <Link to={`/offer/${offer._id}`} key={offer._id}>
-                    <img
-                      className="url"
-                      style={{ height: 180 }}
-                      src={offer.product_image.url}
-                    />
+                    <img className="url" src={offer.product_image.url} />
                     <h3 className="prix">{offer.product_price}€</h3>
                   </Link>
                   {offer.product_details.map((detail, i) => {

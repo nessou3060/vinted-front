@@ -35,7 +35,7 @@ const Login = (setUser) => {
       <h1>Se connecter </h1>
       <form onSubmiit={handleSubmit}>
         <input
-          className="connecter"
+          className="connecter1"
           type="text"
           placeholder="Adresse email "
           value={email}
@@ -46,7 +46,7 @@ const Login = (setUser) => {
         <br />
 
         <input
-          className="connecter"
+          className="connecter1"
           type="password"
           placeholder="Mot de passe "
           value={password}

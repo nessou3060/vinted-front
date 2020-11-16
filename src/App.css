@@ -55,9 +55,9 @@
 }
 
 .url {
-  width: 200px;
-  height: 528px;
-  margin: 0;
+  width: 250px;
+  height: 328px;
+  margin: 40px 40px;
 }
 .avatar {
   border-radius: 880px;
@@ -102,12 +102,38 @@
   margin: auto;
 }
 
-.connecter {
+.connecter1 {
   border: none;
   border-bottom: 1px solid #fcced3;
   font-size: 15px;
 }
 
+.connecter {
+  background-color: #2cb1ba;
+  color: white;
+  border-radius: 5px;
+}
+
+/* offer */
+
+.offer {
+  width: 1280px;
+  display: flex;
+  margin: 43px;
+  justify-content: space-around;
+  background-color: gray;
+}
+.info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: #fff;
+  width: 320px;
+  padding: 40px;
+}
+.info1 {
+  display: flex;
+}
 /* Footer */
 .footer {
   display: flex;
