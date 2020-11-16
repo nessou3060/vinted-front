@@ -1,15 +1,67 @@
+/* Header */
 .logo {
   width: 75px;
   height: 38px;
   margin: 6px 75px;
 }
+
 .container {
   display: flex;
   justify-content: space-between;
-  background-color: cadetblue;
+  align-items: center;
 }
 
-.button button {
+.button {
+  display: flex;
+  justify-content: center;
+}
+.buton1 {
+  height: 50px;
+  width: 150px;
+  margin: 0px 20px 0px 0px;
+  border: 1px solid #2cb1ba;
+  border-radius: 10px;
+  background-color: #fff;
+  font-size: 14px;
+}
+.buton2 {
+  height: 50px;
+  width: 150px;
+  margin: 0px 50px 0px 70px;
+  border: 1px solid #2cb1ba;
+  border-radius: 10px;
+  background-color: #2cb1ba;
+  font-size: 14px;
+}
+
+/* Home */
+.photo {
+  object-fit: cover;
+  height: 550px;
+  width: 100%;
+  margin: 10px 0px;
+}
+.home {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.home2 {
+  width: 280px;
+  flex-direction: row;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 30px auto auto;
+}
+
+.url {
+  width: 200px;
+  height: 528px;
+  margin: 0;
+}
+.avatar {
+  border-radius: 880px;
+  width: 80px;
 }
 .name {
   color: #999;
@@ -30,4 +82,37 @@
   font-size: 15px;
 }
 .article {
+}
+
+/* signup */
+.signup {
+  width: 275px;
+  margin: auto;
+}
+
+.nom {
+  border: none;
+  border-bottom: 1px solid #fcced3;
+  font-size: 15px;
+}
+
+/* login */
+.login {
+  width: 275px;
+  margin: auto;
+}
+
+.connecter {
+  border: none;
+  border-bottom: 1px solid #fcced3;
+  font-size: 15px;
+}
+
+/* Footer */
+.footer {
+  display: flex;
+  color: pink;
+  font-size: 18px;
+  font-family: "Xanh Mono", monospace;
+  justify-content: center;
 }

@@ -8,6 +8,7 @@ import "./App.css";
 import Offer from "./containers/Offer";
 import Signup from "./containers/Signup";
 import Login from "./containers/login";
+import Footer from "./composant/Footer";
 
 export default function App() {
   const [data, setData] = useState({});
@@ -32,9 +33,7 @@ export default function App() {
           <Route path="/offer/:id">
             <Offer offers={data.offers} />
           </Route>
-          <Route path="/signup">
-            <Signup></Signup>
-          </Route>
+          <Route path="/signup"></Route>
           <Route path="/login">
             <Login></Login>
           </Route>
@@ -44,6 +43,7 @@ export default function App() {
           </Route>
         </Switch>
       </div>
+      <Footer></Footer>
     </Router>
   );
 }

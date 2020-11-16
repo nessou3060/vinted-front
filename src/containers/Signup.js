@@ -3,7 +3,7 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 import { useHistory } from "react-router-dom";
 
-const Signup = () => {
+const Signup = (setUser) => {
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -12,15 +12,36 @@ const Signup = () => {
   const handleSubmit = async (event) => {
     event.preventDefault(); // Pour empêcher le navigateur de changer de page lors de la soumission du formulaire
 
-    const response = await axios.post(
-      "https://lereacteur-vinted-api.herokuapp.com/user/signup"
-    );
+    try {
+      const response = await axios.post(
+        "https://lereacteur-vinted-api.herokuapp.com/user/signup",
+
+        {
+          username: username,
+          email: email,
+          password: password,
+        }
+      );
+      //   console.log(response.data);
+      if (response.data.token) {
+        setUser(response.data.token);
+        // Naviguer vers "/" Home
+        history.push("/");
+      } else {
+        alert("Une erreur est survenue");
+      }
+    } catch (error) {
+      console.log(error.message);
+    }
   };
+
   return (
     <div className="signup">
       <h1>S'inscrire</h1>
+
       <form onSubmiit={handleSubmit}>
         <input
+          className="nom"
           type="text"
           placeholder="Nom d'utilisateur "
           value={username}
@@ -30,6 +51,7 @@ const Signup = () => {
         />
         <br />
         <input
+          className="nom"
           type="text"
           placeholder="Email"
           value={email}
@@ -39,6 +61,7 @@ const Signup = () => {
         />
         <br />
         <input
+          className="nom"
           type="password"
           placeholder="Mot de passe "
           value={password}
@@ -46,7 +69,9 @@ const Signup = () => {
             setPassword(event.target.value);
           }}
         />
+
         <br />
+
         <input type="checkbox" />
         <span>S'inscrire à notre newsletter</span>
 

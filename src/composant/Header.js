@@ -11,15 +11,20 @@ const Header = (props) => {
       </Link>
       <div className="button">
         <Link to="/signup">
-          <button onClick={() => {}}>s'inscrire</button>
+          <button className="buton1" onClick={() => {}}>
+            s'inscrire
+          </button>
         </Link>
         <Link to="/login">
-          <button onClick={() => {}}>se connecter</button>
+          <button className="buton1" onClick={() => {}}>
+            se connecter
+          </button>
         </Link>
-        <button onClick={() => {}}>vend t'es article</button>
+        <button className="buton2" onClick={() => {}}>
+          vend t'es article
+        </button>
       </div>
     </div>
   );
 };
-
 export default Header;
