@@ -8,9 +8,18 @@ const Header = (props) => {
     <div className="container">
       <Link to="/">
         <img className="logo " src={Logo} />
+        <Link to="/publish">
+          <button className="buton22" onClick={() => {}}>
+            Commencer a vendre
+          </button>
+        </Link>
       </Link>
 
-      <input type="text" placeholder="  Recherche des articles"></input>
+      <input
+        className="recherche"
+        type="text"
+        placeholder="  Recherche des articles"
+      ></input>
 
       <div className="button">
         <Link to="/signup">

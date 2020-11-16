@@ -9,6 +9,7 @@ import Offer from "./containers/Offer";
 import Signup from "./containers/Signup";
 import Login from "./containers/login";
 import Footer from "./composant/Footer";
+import Publish from "./containers/Publish";
 
 import Payement from "./containers/Payement";
 
@@ -38,6 +39,9 @@ export default function App() {
 
           <Route path="/payement">
             <Payement></Payement>
+          </Route>
+          <Route path="/publish">
+            <Publish></Publish>
           </Route>
 
           <Route path="/signup">

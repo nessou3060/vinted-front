@@ -4,7 +4,12 @@
   height: 38px;
   margin: 6px 75px;
 }
-
+.recherche {
+  flex: 1;
+  border-radius: 5px;
+  background-color: #f5f6f7;
+  margin: 10px;
+}
 .container {
   display: flex;
   justify-content: space-between;
