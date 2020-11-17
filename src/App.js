@@ -11,7 +11,7 @@ import Login from "./containers/login";
 import Footer from "./composant/Footer";
 import Publish from "./containers/Publish";
 
-import Payement from "./containers/Payement";
+import Payment from "./containers/Payment";
 
 export default function App() {
   const [data, setData] = useState({});
@@ -49,10 +49,7 @@ export default function App() {
           </Route>
 
           <Route path="/payement">
-            <Payement></Payement>
-          </Route>
-          <Route path="/publish">
-            <Publish></Publish>
+            <Payment></Payment>
           </Route>
 
           <Route path="/signup">
@@ -62,7 +59,9 @@ export default function App() {
           <Route path="/login">
             <Login setUser={setUser}></Login>
           </Route>
-
+          <Route path="/publish">
+            <Publish token={token}></Publish>
+          </Route>
           <Route path="/">
             <Home offers={data.offers} />
           </Route>

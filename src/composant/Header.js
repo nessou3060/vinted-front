@@ -11,11 +11,20 @@ const Header = (props) => {
     <div className="container">
       <Link to="/">
         <img className="logo " src={Logo} />
-        <Link to="/publish">
-          <button className="buton22" onClick={() => {}}>
-            Commencer a vendre
-          </button>
-        </Link>
+
+        {token ? (
+          <Link to="/publish">
+            <button className="buton22" onClick={() => {}}>
+              Commencer a vendre
+            </button>
+          </Link>
+        ) : (
+          <Link to="/login">
+            <button className="buton2" onClick={() => {}}>
+              Commencer a vendre
+            </button>
+          </Link>
+        )}
       </Link>
 
       <input
@@ -27,7 +36,7 @@ const Header = (props) => {
       <div className="glob">
         {token ? (
           <button
-            className="buton1"
+            className="buton12"
             onClick={() => {
               setUser(null);
               history.push("/");
@@ -49,9 +58,22 @@ const Header = (props) => {
             </Link>
           </div>
         )}
-        <button className="buton2" onClick={() => {}}>
-          vend t'es article
-        </button>
+
+        <div className="glob2">
+          {token ? (
+            <Link to="/publish">
+              <button className="buton2" onClick={() => {}}>
+                vend t'es article
+              </button>
+            </Link>
+          ) : (
+            <Link to="/login">
+              <button className="buton2" onClick={() => {}}>
+                vend t'es article
+              </button>
+            </Link>
+          )}
+        </div>
       </div>
     </div>
   );

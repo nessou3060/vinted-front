@@ -6,9 +6,10 @@
 }
 .recherche {
   flex: 1;
-  border-radius: 5px;
+
+  border-radius: 4px;
   background-color: #f5f6f7;
-  margin: 10px;
+  margin: 5px;
 }
 .container {
   display: flex;
@@ -36,6 +37,16 @@
   border: 1px solid #2cb1ba;
   border-radius: 10px;
   background-color: #2cb1ba;
+  font-size: 14px;
+}
+
+.buton12 {
+  height: 50px;
+  width: 150px;
+
+  border: 1px solid #2cb1ba;
+  border-radius: 10px;
+  background-color: #fff;
   font-size: 14px;
 }
 
