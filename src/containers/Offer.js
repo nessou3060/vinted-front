@@ -24,17 +24,18 @@ const Offer = () => {
     <p>ca charge !!!!!</p>
   ) : (
     <div className="offer">
-      <img src={data.product_image.secure_url} />
+      <img className="photo2" src={data.product_image.secure_url} />
+
       <div className="info">
+        <h3 className="prix2">{data.product_price}€</h3>
         {data.product_details.map((elem, i) => {
           const keys = Object.keys(elem); // ["MARQUE"]
 
           console.log(keys[0]);
           return (
             <div key={i} className="info1">
-              <p>
-                {keys[0]} {elem[keys[0]]}
-              </p>
+              <p className="info4">{keys[0]}</p>{" "}
+              <p className="info5">{elem[keys[0]]}</p>
               {/* <p>{elem.TAILLE}</p>
             <p>{elem.ÉTAT}</p>
             <p>{elem.COULEUR}</p>
@@ -47,7 +48,12 @@ const Offer = () => {
           <p>{data.product_description}</p>
           <p>{data.owner.account.username}</p>
 
-          <Link to="/payement">
+          <Link
+            to={{
+              pathname: "/payment",
+              state: { title: data.product_name, price: data.product_price },
+            }}
+          >
             <button className="buton5" onClick={() => {}}>
               Acheter
             </button>
