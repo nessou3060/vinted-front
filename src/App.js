@@ -63,7 +63,7 @@ export default function App() {
             <Publish token={token}></Publish>
           </Route>
           <Route path="/">
-            <Home offers={data.offers} />
+            <Home token={token} offers={data.offers} />
           </Route>
         </Switch>
       </div>

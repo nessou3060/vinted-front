@@ -3,9 +3,29 @@ import { Link } from "react-router-dom";
 import Photo from "../assets/photo.jpeg";
 const Home = (props) => {
   console.log(props);
+  const { token } = props;
+  console.log(token);
   return (
     <div>
       <img className="photo" src={Photo} />
+
+      <div className="b21">
+        <h2>Prêts à faire du tri dans vos placards ?</h2>
+        {token ? (
+          <Link to="/publish">
+            <button className="b22" onClick={() => {}}>
+              Commencer a vendre
+            </button>
+          </Link>
+        ) : (
+          <Link to="/login">
+            <button className="b22" onClick={() => {}}>
+              Commencer a vendre
+            </button>
+          </Link>
+        )}
+      </div>
+
       <div className="home">
         {props.offers.map((offer, i) => {
           return (

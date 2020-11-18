@@ -50,6 +50,7 @@ const Publish = ({ token }) => {
   return token ? (
     <form onSubmit={handleSubmit}>
       <div className="input-file-div">
+        <h2>Vends ton article</h2>
         <label htmlFor="file">Ajouter une photo</label>
         <label htmlFor="file">+</label>
         <input
@@ -60,65 +61,74 @@ const Publish = ({ token }) => {
         />
       </div>
       <br />
+      <h3>titre</h3>
       <input
         type="text"
-        placeholder="title"
+        placeholder="ex chemise blanche"
         value={title}
         onChange={(event) => setTitle(event.target.value)}
       />
       <br />
+      <h3>Décris ton article</h3>
       <textarea
         value={description}
         onChange={(event) => setDescription(event.target.value)}
-        placeholder="description"
+        placeholder="ex: porté quelquefois, taille correctement"
         name=""
         id=""
         cols="30"
         rows="10"
       ></textarea>
       <br />
+      <h3>Marque</h3>
       <input
         type="text"
-        placeholder="brand"
+        placeholder="ex: Zara"
         value={brand}
         onChange={(event) => setBrand(event.target.value)}
       />
       <br />
+      <h3>Taille</h3>
       <input
         type="text"
-        placeholder="size"
+        placeholder="ex: L / 40 / 12"
         value={size}
         onChange={(event) => setSize(event.target.value)}
       />
       <br />
+      <h3>Couleur</h3>
       <input
         type="text"
-        placeholder="color"
+        placeholder="ex: Fushia"
         value={color}
         onChange={(event) => setColor(event.target.value)}
       />
       <br />
+      <h3>Etat</h3>
       <input
         type="text"
-        placeholder="condition"
+        placeholder="Neuf avec étiquette"
         value={condition}
         onChange={(event) => setCondition(event.target.value)}
       />
       <br />
+      <h3>Lieu</h3>
+
       <input
         type="text"
-        placeholder="city"
+        placeholder="ex: Paris"
         value={city}
         onChange={(event) => setCity(event.target.value)}
       />
       <br />
+      <h3>Prix</h3>
       <input
         type="number"
         value={price}
         onChange={(event) => setPrice(event.target.value)}
       />
       <br />
-      <button type="submit">Valider</button>
+      <button type="submit">Ajouter</button>
     </form>
   ) : (
     <Redirect

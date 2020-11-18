@@ -11,20 +11,6 @@ const Header = (props) => {
     <div className="container">
       <Link to="/">
         <img className="logo " src={Logo} />
-
-        {token ? (
-          <Link to="/publish">
-            <button className="buton22" onClick={() => {}}>
-              Commencer a vendre
-            </button>
-          </Link>
-        ) : (
-          <Link to="/login">
-            <button className="buton2" onClick={() => {}}>
-              Commencer a vendre
-            </button>
-          </Link>
-        )}
       </Link>
 
       <input
