@@ -10,7 +10,7 @@ import Signup from "./containers/Signup";
 import Login from "./containers/login";
 import Footer from "./composant/Footer";
 import Publish from "./containers/Publish";
-// import Payment from "./containers/Payment";
+import Payment from "./containers/Payment";
 
 export default function App() {
   const [data, setData] = useState({});
@@ -57,9 +57,9 @@ export default function App() {
           <Route path="/publish">
             <Publish token={token}></Publish>
           </Route>
-          {/* <Route path="/payment">
+          <Route path="/payment">
             <Payment></Payment>
-          </Route> */}
+          </Route>
           <Route path="/">
             <Home token={token} offers={data.offers} />
           </Route>

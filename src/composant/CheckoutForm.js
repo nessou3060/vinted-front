@@ -51,18 +51,18 @@
 //               </div>
 //               <div className="">
 //                 <p>Frais de protection Acheteurs</p>
-//                 <p>{fraisProtection.toFixed(2)} £</p>
+//                 <p>{fraisProtection.toFixed(2)} €</p>
 //               </div>
 //               <div className="">
 //                 <p>Frais de Port</p>
-//                 <p>{fraisPort.toFixed(2)} £</p>
+//                 <p>{fraisPort.toFixed(2)} €</p>
 //               </div>
 //               <hr />
 //             </div>
 //             <div className="">
 //               <div className="">
 //                 <h2>Total</h2>
-//                 <div>{total} £</div>
+//                 <div>{total} €</div>
 //               </div>
 //               <p className="">
 //                 Il ne nous reste qu'une seule ètape pour vous offrir {name}.
@@ -71,14 +71,10 @@
 //               </p>
 //             </div>
 //             <hr />
-//             <CardElement className="payement" />
-//             <button className="pay" type="submit">
-//               Payer
-//             </button>
+
 //           </form>
 //         </div>
-//       ) : (
-//         <Result name={name} total={total} />
+
 //       )}
 //     </>
 //   );
